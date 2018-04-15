@@ -85,13 +85,13 @@ On veut déterminer si un programme P avec une entrée D est nuisible.
 
 \textbf{Être nuisible:} Un programme est dit nuisible si son exécution a pour effet de contaminer d'autres programmes (par exemple: le programme va se recopier autre part). 
 
-Spécification du programme \textit{detecteur(P,D)}:\\
+Spécification du programme \lstinline{detecteur(P,D)}:\\
 \textbf{Préconditions :} un programme P et une donnée D\\
 \textbf{Postconditions :} ``Mauvais'' si P(D) est nuisible,
 		``Bon'' sinon.\\
-Il faut aussi que detecteur ne soit pas nuisible.
+Il faut aussi que \lstinline{detecteur} ne soit pas nuisible.
 
-Faisons l'hypothèse qu'un programme detecteur(P,D) existe et que celui-ci ne soit pas nuisible.  Sous cette hypothèse, on peut construire le programme  drole(P) suivant.
+Faisons l'hypothèse qu'un programme \lstinline{detecteur(P,D)} existe et que celui-ci ne soit pas nuisible.  Sous cette hypothèse, on peut construire le programme  \lstinline{drole(P)} suivant.
 
 \label{lst:detecteur_de_virus}
 \begin{lstlisting}
@@ -122,7 +122,7 @@ else infecter un autre programme en y inserant drole
 \end{itemize}
 
 On a donc une contradiction dans tous les cas, ce qui implique que le programme \lstinline|drole| ne peut pas
-exister. Vu que la seule hypothèse que nous avons formulé pour écrire le programme \lstinline|drole| est que \lstinline|detecteur| (non nuisible) existe, 
+exister. Vu que la seule hypothèse que nous avons formulée pour écrire le programme \lstinline|drole| est que \lstinline|detecteur| (non nuisible) existe, 
 cela implique que le programme \lstinline|detecteur| (non nuisible) n'existe pas non plus.
 % paragraph  (end)
 % subsubsection d_tection_de_virus (end)
@@ -130,9 +130,9 @@ cela implique que le programme \lstinline|detecteur| (non nuisible) n'existe pas
 \subsection{ Existence de problèmes intrinsèquement complexes}
 \label{subsec:existence_de_problemes_intrinsequement_complexes}
 
-Un problème intrinsèquement complexe et un problème dont le meilleur algorithme n'a pas de complexité polynomiale, mais une complexité exponentielle ou pire.  Peu importe les évolutions technologiques, un problème exponentiel ne peut et ne pourra être résolu que pour des données petite taille.  Un exemple est le problème du voyageur de commerce qui doit rechercher le trajet le plus court pour relier n villes..  Pour un problème intrinsèquement complexe, lorsqu'un ordinateur est $n$ fois plus rapide,  la taille des problèmes pouvant être résolus en temps raisonnable est incrémentée d'une petite valeur (voir le tableau ci-dessous).
+Un problème intrinsèquement complexe et un problème dont le meilleur algorithme n'a pas de complexité polynomiale, mais une complexité exponentielle ou pire.  Peu importe les évolutions technologiques, un problème exponentiel ne peut et ne pourra être résolu que pour des données de petite taille.  Un exemple est le problème du voyageur de commerce qui doit rechercher le trajet le plus court pour relier $n$ villes.  Pour un problème intrinsèquement complexe, lorsqu'un ordinateur est $n$ fois plus rapide,  la taille des problèmes pouvant être résolus en temps raisonnable est incrémentée d'une petite valeur (voir le tableau ci-dessous).
 
-Supposons un ordinateur actuel sachant faire 100 millions d'instructions par secondes ($100$ Mips) et que le traitement d'un élément nécessite 100 instructions machines.  Dénotons $N_i$  la taille du ``plus grand'' exemple dont la solution peut-être calculée en 1 heure de temps calcul.	
+Supposons un ordinateur actuel sachant faire 100 millions d'instructions par seconde ($100$ Mips) et que le traitement d'un élément nécessite 100 instructions machines.  Dénotons $N_i$  la taille du ``plus grand'' exemple dont la solution peut-être calculée en 1 heure de temps calcul.	
 
 \begin{center}
 	$\begin{array}{|c||c|c|c|}
@@ -153,7 +153,7 @@ Supposons un ordinateur actuel sachant faire 100 millions d'instructions par sec
 \section{Objectifs calculabilité et complexité}
 \label{sec:objectifs_calculabilite_et_complexite}
 
-La figure Fig(\ref{cal_non_cal}) illustre la frontière entre les problèmes non calculables (il n'existe pas un programme) et calculables (il existe un programme).  Parmis les problèmes calculables il a ceux qui le sont en pratiques (pas exponentiel) et ceux qui ne sont pas calculables en pratique. 
+La figure Fig(\ref{cal_non_cal}) illustre la frontière entre les problèmes non calculables (il n'existe pas un programme) et calculables (il existe un programme).  Parmi les problèmes calculables il y a ceux qui le sont en pratiques (pas exponentiels) et ceux qui ne sont pas calculables en pratique. 
 \begin{figure}[h]
 	\centering
 	\begin{tikzpicture}[scale=0.8]
@@ -170,6 +170,6 @@ La figure Fig(\ref{cal_non_cal}) illustre la frontière entre les problèmes non
 	\label{cal_non_cal}
 \end{figure}
 
-L'intérêt de la calculabilité est de savoir quels problèmes sont calculables ou lesquels ne le sont pas.  Si un problème est non calculable. il est alors inutile  d'essayer de résoudre ce problème.  Si le problème est calculable mais intrinsèquement complexe, il est inutile d'envisager un algorithme permettant de résoudre des problème de grande taille.  
-Face à un problème non calculable ou intrinsèquement complexe,  on peut essayer de relâcher le problème pour le rendre calculable ou de complexité polynomiale..  Une solution à ce problème relâché peut par exemple être une approximation du problème initial.  
+L'intérêt de la calculabilité est de savoir quels problèmes sont calculables ou lesquels ne le sont pas.  Si un problème est non calculable, il est alors inutile  d'essayer de résoudre ce problème.  Si le problème est calculable mais intrinsèquement complexe, il est inutile d'envisager un algorithme permettant de résoudre des problèmes de grande taille.  
+Face à un problème non calculable ou intrinsèquement complexe,  on peut essayer de relâcher le problème pour le rendre calculable ou de complexité polynomiale.  Une solution à ce problème relâché peut par exemple être une approximation du problème initial.  
 % section introduction (end)Introduction
